@@ -1,33 +1,30 @@
 <template>
     <div class="home">
         <h1>{{ msg }}</h1>
-        <p>Email</p>
-        <!-- `picked` is a string "a" when checked -->
-        <input type="email" v-model="loginInfo.email">
-        <!-- `toggle` is either true or false -->
-        <p>Password</p>
-        <input type="password" v-model="loginInfo.password" />
-        <button type="submit">Login</button>
-
+        <p>Hello world</p>
 
     </div>
 </template>
 
 <script>
+    import { EventBus } from '../eventbus.js';
     export default {
         data() {
             return {
                 loginInfo: {
                     email: '',
-                    password: ''
+                    password: '',
+                    oldPassword: ''
                 }
             }
         },
+        methods: {
+            emitLogin() {
+                EventBus.$emit('I tried to login', this.loginInfo);
+            },
+            myFunction: function () {
+                window.open("http://localhost:1337/Login", "_blank");
+            }
+        }
     };
 </script>
-
-
-<!--<h1>Login</h1>
-<input type="text" name="username" v-model="input.username" placeholder="Username" />
-<input type="password" name="password" v-model="input.password" placeholder="Password" />
-<button type="button" v-on:click="login()">Login</button>-->

@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="login">
         <h1>{{ msg }}</h1>
         <p>Email</p>
         <!-- `picked` is a string "a" when checked -->
@@ -8,7 +8,7 @@
         <p>Password</p>
         <input type="password" v-model="loginInfo.password" />
         <p></p>
-        <button type="submit">Login</button>
+        <button @click="myFunction">Login</button>
 
 
     </div>
@@ -29,6 +29,9 @@
         methods: {
             emitLogin() {
                 EventBus.$emit('I tried to login', this.loginInfo);
+            },
+            myFunction: function () {
+                window.open("http://localhost:1337/Login", "_blank");
             }
         }
     };
