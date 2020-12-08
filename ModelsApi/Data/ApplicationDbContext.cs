@@ -11,14 +11,14 @@ namespace ModelsApi.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
                 : base(options) { }
-
+        #region Dbset<Ef>
         public DbSet<EfAccount> Accounts { get; set; }
         public DbSet<EfJob> Jobs { get; set; }
         public DbSet<EfExpense> Expenses { get; set; }
         public DbSet<EfJobModel> JobModels { get; set; }
         public DbSet<EfModel> Models { get; set; }
         public DbSet<EfManager> Managers { get; set; }
-
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configure many-to-many relationship
