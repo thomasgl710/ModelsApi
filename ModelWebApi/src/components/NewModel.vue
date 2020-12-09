@@ -307,7 +307,8 @@
                     this.response = responseJson;
             })
             .catch(error => alert('Something bad happened: ' + error));
-            }
+
+            }
         }
     }
 </script>
