@@ -1,4 +1,95 @@
 <template>
+    <div class="columns" id="app">
+        <section class="section">
+            <h1 class="title"> Fun with Forms</h1>
+            <p class="subtitle">
+                Learn how to work with forms, including <strong> validation</strong>!
+            </p>
+            <h>
+                <section class="form">
+                    <form v-on:submit.prevent="onSubmitForm">
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input type="email" v-model="form.email" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input type="password" v-model="form.password" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button v-bind:disabled="errors.any" class="button is-primary">
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </h>
+        </section>
+    </div>
+</template>
+
+
+<script>
+    import VeeValidate from 'vee-validate';
+    VeeValidate.Validator.extend("polite", {
+        getMessage: field => `You need to be polite in the ${field} field`,
+        validate: value => value.toLowerCase().indexOf("please") !== -1
+    });
+    export default {
+        name: "VNTForm",
+        data: () => ({
+            form: {
+                email: "",
+                password: "",
+            }
+        }),
+        methods: {
+            onSubmitForm() {
+                if (this.$validator.validateAll()) {
+                    alert(JSON.stringify(this.form));
+                }
+                else
+                    alert('You have errors in the form');
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    #results {
+        position: fixed;
+        right: 0;
+        top: 10%;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template>
     <div class="login">
         <h1>Login</h1>
         <p>Email</p>
@@ -14,7 +105,7 @@
     </div>
 </template>
 
-<script>
+<!--<script>
     export default {
         data() {
             return {
@@ -31,4 +122,4 @@
             }
         }
     };
-</script>
+</script>-->
