@@ -164,7 +164,7 @@
                         <input firstname="height"
                                v-model="form.height"
                                v-validate="'required|min:3'"
-                               class="input" type="number" placeholder="In meters">
+                               class="input" type="number" placeholder="In meters" min="0">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('height')">
             {{ errors.first('height') }}
@@ -182,7 +182,7 @@
                         <input firstname="shoesize"
                                v-model="form.shoesize"
                                v-validate="'required|min:3'"
-                               class="input" type="number" placeholder="US-sizes">
+                               class="input" type="number" placeholder="US-sizes" min="0">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('shoesize')">
             {{ errors.first('shoesize') }}

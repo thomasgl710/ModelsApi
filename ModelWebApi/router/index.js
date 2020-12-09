@@ -4,7 +4,8 @@ import Home from "../src/components/Home.vue";
 import Login from "../src/components/Login.vue";
 import NewManager from "../src/components/NewManager.vue";
 import NewModel from "../src/components/NewModel.vue";
-//import AddModelToJob from "../src/components/AddModelToJob.vue";
+import RemoveModelFromJob from "../src/components/RemoveModelFromJob.vue";
+import AddModelToJob from "../src/components/AddModelToJob.vue";
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -35,11 +36,16 @@ export default new VueRouter({
             path: "/NewModel",
             name: "NewModel",
             component: NewModel
+        },
+        {
+            path: "/AddModelToJob",
+            name: "AddModelToJob",
+            component: AddModelToJob
+        },
+        {
+            path: "/RemoveModelFromJob",
+            name: "RemoveModelFromJob",
+            component: RemoveModelFromJob
         }
-        //{
-        //    path: "/AddModelToJob",
-        //    name: "AddModelToJob",
-        //    component: AddModelToJob
-        //}
     ]
 });

@@ -6,9 +6,9 @@
                 <p class="subtitle">
                     Are you a model?
                 </p>
-                <h>
+                <hr>
                     <section class="form">
-                        <form v-on:submit.prevent="onSubmitForm">
+                        <form v-on:submit.prevent="login">
                             <div class="field">
                                 <label class="label">Email</label>
                                 <div class="control">
@@ -31,7 +31,6 @@
                     </div>
                         </form>
                     </section>
-                </h>
             </section>
         </div>
     </div>
@@ -48,12 +47,28 @@
             }
         }),
         methods: {
-            onSubmitForm() {
-                if (this.$validator.validateAll()) {
-                    alert(JSON.stringify(this.form));
+            async login() {
+                let url = "https://localhost:44368/api/account/login";
+                try {
+                    let response = await fetch(url, {
+                        method: "POST",
+                        body: JSON.stringify(this.form), // Assumes data is in an object called form
+                        headers: new Headers({
+                            "Content-Type": "application/json"
+                        })
+                    });
+                    if (response.ok) {
+                        let token = await response.json();
+                        localStorage.setItem("token", token.jwt);
+                        // Change view to some other component
+                        // …
+                    } else {
+                        alert("Server returned: " + response.statusText);
+                    }
+                } catch (err) {
+                    alert("Error: " + err);
                 }
-                else
-                    alert('You have errors in the form');
+                return;
             }
         }
     }

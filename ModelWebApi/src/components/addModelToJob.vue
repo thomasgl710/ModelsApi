@@ -1,51 +1,81 @@
-
 <template>
-    <div class="addModelToJob">
-        <h1>Add model to job</h1>
-        <p> JobId</p>
-        <input type="number" v-model="addModelToJobInfo.EfJobId" min="0" />
-
-        <p> ModelId</p>
-        <input type="number" v-model="addModelToJobInfo.EfModelId" min="0" />
-
-        <p></p>
-        <button @click="addModelToJob">Add model to job</button>
+    <div class="column is two-thirds">
+        <section class="section">
+            <h1 class="title"> Add model to job</h1>
+            <p class="subtitle">
+                Please add the model!!
+            </p>
+            <hr>
+            <section class="form">
+                <form v-on:submit.prevent="onSubmitForm">
+                    <div class="field">
+                        <label class="label">JobId</label>
+                        <div class="control">
+                            <input name="EfJobId" v-model="form.efJobId" class="input" type="number" min="0">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">ModelId</label>
+                        <div class="control">
+                            <input name="EfModelId" v-model="form.efModelId" class="input" type="number" min="0">
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="field-is-grouped">
+                        <div class="control">
+                            <button class="button is-primary">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
     </div>
 </template>
+
+
 <script>
     export default {
-        data() {
-            return {
-                addModelToJobInfo: {
-                    EfJobId: '',
-                    EfModelId: ''
-                }
+        name: "VNTForm",
+        data: () => ({
+            form: {
+                efJoblId: "",
+                efModelId: ""
             }
-        },
+        }),
         methods: {
-            addModelToJob: function () {
-                this.checkForm();
-            },
-            checkForm: function () {
-                this.errors = []
-                if (this.EfJobId < 0)
-                    this.errors.push('Type in a JobId');
-                else if (this.EfModelId < 0)
-                    this.errors.push('Type in a ModelId');
-                //else {
-                //    fetch(apiUrl + encodeURIComponent(this.EfModelId, this.EfJobId))
-                //        .then(async res => {
-                //            if (res.status === 204) {
-                //                alet('OK');
-                //            }
-                //            else if (res.status === 400) {
-                //                let errorResponse = await res.json();
-                //                this.errors.push(errorResponse.error);
-                //            }
-                //        });
-                //}
+            onSubmitForm() {
+                var url = "https://localhost:44368/api/Models";
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(this.form),
+                    credentials: 'include',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json'
+                    }
+                }).then(responseJson => {
+                    this.response = responseJson;
+                })
+                    .catch(error => alert('Something bad happened: ' + error));
+
             }
         }
-
     }
 </script>
+
+<style scoped>
+    #results {
+        position: fixed;
+        right: 0;
+        top: 10%;
+    }
+</style>
+
+
+
+
+
+
+
