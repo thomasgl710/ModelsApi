@@ -21,6 +21,7 @@ const apiUrl = ''
         <button @click="createNewManager">Create new manager</button>
     </div>
 </template>
+
 <script>
     export default {
         data() {

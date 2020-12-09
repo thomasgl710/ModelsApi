@@ -1,7 +1,3 @@
-<!--<template>
-    <div class="home">
-        <h1>{{ msg }}</h1>
-        <p>Lasse er en bot</p>
-
-    </div>
-</template>-->
+<template>
+    <h1>Thomas er en bot</h1>
+</template>

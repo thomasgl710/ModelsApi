@@ -1,4 +1,4 @@
-const apiUrl = 's'
+
 <template>
     <div class="addModelToJob">
         <h1>Add model to job</h1>
