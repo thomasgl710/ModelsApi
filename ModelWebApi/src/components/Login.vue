@@ -2,9 +2,9 @@
     <div class="columns" id="app">
         <div class="columns is-two-thirds">
             <section class="section">
-                <h1 class="title"> Fun with Forms</h1>
+                <h1 class="title"> Login page</h1>
                 <p class="subtitle">
-                    Learn how to work with forms, including
+                    Are you a model?
                 </p>
                 <h>
                     <section class="form">

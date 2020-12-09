@@ -3,7 +3,7 @@
         <section class="section">
             <h1 class="title"> Create new manager account</h1>
             <p class=" subtitle">
-                Yes Yes
+                Please create an account mr. Lee
             </p>
             <hr>
             <section class="form">
@@ -65,7 +65,7 @@
         methods: {
             onSubmitForm() {
                 if (this.$validator.validateAll()) {
-                    alet(JSON.stringify(this.form));
+                    alert(JSON.stringify(this.form));
                 }
                 else
                     alert('You have errors in the form');
