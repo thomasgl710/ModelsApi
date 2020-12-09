@@ -47,6 +47,7 @@
     <Content Include="src\components\NewManager.vue">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\components\NewModel.vue" />
     <Content Include="src\eventbus.js">
       <SubType>Code</SubType>
     </Content>
