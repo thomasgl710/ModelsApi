@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue"
 //import Login from "../src/views/Login.vue";
 import Login from "../src/components/Login.vue"
-
+import NewManager from "../src/components/NewManager.vue"
+import AddModelToJob from "../src/components/AddModelToJob.vue"
 Vue.use(VueRouter);
 
 const routes = [
@@ -22,6 +23,16 @@ const routes = [
         name: "About",
         component: () =>import("../views/Home.vue")
     },
+    {
+        path: "/newManager",
+        name: "NewManager",
+        component: NewManager
+    },
+    {
+        path: "/addModelToJob",
+        name: "AddModelToJob",
+        component: AddModelToJob
+    }
 ];
 
 async login() {

@@ -35,10 +35,16 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\App.vue" />
+    <Content Include="src\components\AddModelToJob.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\Home.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="src\components\Login.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\NewManager.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\eventbus.js">
