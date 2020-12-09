@@ -5,6 +5,7 @@ import Home from "../views/Home.vue"
 import Login from "../src/components/Login.vue"
 import NewManager from "../src/components/NewManager.vue"
 import AddModelToJob from "../src/components/AddModelToJob.vue"
+
 Vue.use(VueRouter);
 
 const routes = [
