@@ -38,31 +38,36 @@
 </template>
 
 <script>
-    var url = "https://localhost:44368/api/Jobs";
-    fetch(url).then(
-        res => {
-            res.json.then(
-                data => {
-                    console.log(data);
-                    if (data.length > 0) {
-                        var temp = "";
+    
 
-                        data.forEach((u) => {
-                            temp += "<tr>";
-                            temp += "<td>" + u.EFJobId + "<td>";
-                            temp += "<td>" + u.Customer + "<td>";
-                            temp += "<td>" + u.StartDate + "<td>";
-                            temp += "<td>" + u.Days + "<td>";
-                            temp += "<td>" + u.Location + "<td>";
-                            temp += "<td>" + u.Comments + "<td>";
-                        })
 
-                        document.getElementById(data).innerHTML = temp;
-                    }
-                }
-            )
-        }
-    )
+            //var url = "https://localhost:44368/api/Jobs";
+            //fetch(url).then(
+            //    res => {
+            //        res.json.then(
+            //            data => {
+
+            //                if (data.length > 0) {
+            //                    var temp = "";
+
+            //                    data.forEach((u) => {
+            //                        temp += "<tr>";
+            //                        temp += "<td>" + u.EFJobId + "<td>";
+            //                        temp += "<td>" + u.Customer + "<td>";
+            //                        temp += "<td>" + u.StartDate + "<td>";
+            //                        temp += "<td>" + u.Days + "<td>";
+            //                        temp += "<td>" + u.Location + "<td>";
+            //                        temp += "<td>" + u.Comments + "<td>";
+            //                    })
+
+            //                    document.getElementById(data).innerHTML = temp;
+            //                }
+            //            }
+            //        )
+            //    }
+            //)
+        
+    
 
 </script>
 

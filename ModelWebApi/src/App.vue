@@ -10,6 +10,7 @@
             <router-link to="/RemoveModelFromJob">Remove model from job</router-link>|
             <router-link to="/AddAnExpense">Add an expense</router-link>|
             <router-link to="/NewJob">Add new job</router-link>
+            <router-link to="/ManagerSite">Manager Site</router-link>
         </div>
 
         <router-view></router-view>
