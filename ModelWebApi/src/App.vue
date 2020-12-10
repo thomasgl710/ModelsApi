@@ -7,7 +7,9 @@
             <router-link to="/Login">Login</router-link> |
             <router-link to="/NewModel">New Model</router-link>|
             <router-link to="/AddModelToJob">Add model from to</router-link>|
-            <router-link to="/RemoveModelFromJob">Remove model from job</router-link>
+            <router-link to="/RemoveModelFromJob">Remove model from job</router-link>|
+            <router-link to="/AddAnExpense">Add an expense</router-link>|
+            <router-link to="/NewJob">Add new job</router-link>
         </div>
 
         <router-view></router-view>
@@ -22,6 +24,8 @@
     import NewManager from './components/NewManager.vue';
     import RemoveModelFromJob from './components/RemoveModelFromJob.vue';
     import NewModel from './components/NewModel.vue'
+    import AddAnExpense from './components/AddAnExpense.vue'
+    import NewJob from './components/NewJob.vue'
 
     export default {
         name: 'app',
@@ -32,6 +36,8 @@
             NewManager,
             NewModel,
             RemoveModelFromJob,
+            AddAnExpense,
+            NewJob
         }
     };
 </script>
