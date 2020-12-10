@@ -50,8 +50,20 @@
                     <!--<p class="help is-danger" v-show="errors.has('email')">
             {{ errors.first('email') }}
         </p>-->
+                </div>
 
 
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input firstname="password"
+                               v-model="form.password"
+                               v-validate="'required|min:3'"
+                               class="input" type="password" placeholder="Password">
+                    </div>
+                    <!--<p class="help is-danger" v-show="errors.has('email')">
+            {{ errors.first('email') }}
+        </p>-->
                 </div>
 
 
@@ -141,7 +153,13 @@
                 </div>
 
 
-
+                <div class="field">
+                    <div class="label">Birthdate</div>
+                    <div class="control">
+                        <input type="date" id="birthdate" name="birthdate"
+                               v-model="form.birthdate">
+                    </div>
+                </div>
 
 
                 <div class="field">
@@ -164,7 +182,7 @@
                         <input firstname="height"
                                v-model="form.height"
                                v-validate="'required|min:3'"
-                               class="input" type="number" placeholder="In meters" min="0">
+                               class="input" step="any" type="number" placeholder="In meters" min="0">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('height')">
             {{ errors.first('height') }}
@@ -194,6 +212,7 @@
                     <div class="control">
                         <div class="select">
                             <select v-model="form.hair_type">
+                           
                                 <option disabled value="">Nothing selected</option>
                                 <option v-for="option in options.haircolor" v-bind:value="option.value" v-bind:key="option.key">
                                     {{ option.text }}
@@ -262,12 +281,14 @@
                 firstname: "",
                 lastname: "",
                 email: "",
+                password: "",
                 phonename: "",
                 addressLine1: "",
                 addressLine2: "",
                 zip: "",
                 city: "",
                 country: "",
+                birthdate: "",
                 nationality: "",
                 height: "",
                 shoesize: "",
@@ -295,6 +316,8 @@
         methods: {
             onSubmitForm() {
                 var url = "https://localhost:44368/api/Models";
+                this.form.height = Number(this.form.height);
+                this.form.shoesize = Number(this.form.shoesize);
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(this.form),

@@ -66,7 +66,7 @@
         }),
         methods: {
             onSubmitForm() {
-                var url = "https://localhost:44368/api/Models";
+                var url = "https://localhost:44368/api/Managers";
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(this.form),

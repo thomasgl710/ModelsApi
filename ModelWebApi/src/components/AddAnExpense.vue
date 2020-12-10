@@ -51,7 +51,7 @@
         }),
         methods: {
             onSubmitForm() {
-                var url = "https://localhost:44368/api/Jobs";
+                var url = "https://localhost:44368/api/Expenses";
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(this.form),

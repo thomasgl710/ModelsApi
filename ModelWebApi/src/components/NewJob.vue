@@ -26,14 +26,20 @@
 
 
                     <!-- MISSING STARTDATE -->
-
-
                     <div class="field">
+                        <div class="label">Date</div>
+                        <div class="control">
+                            <input type="date" id="date" name="date"
+                                   v-model="form.date">
+                        </div>
+                    </div>
+
+
+                    <div class="input">
                         <label class="label">Days</label>
                         <div class="control">
                             <input firstname="days"
                                    v-model="form.days"
-                                   v-validate="'required|min:3'"
                                    class="input" type="number" placeholder="Days" min="0">
                         </div>
                         <!--<p class="help is-danger" v-show="errors.has('days')">
@@ -82,15 +88,17 @@
         name: "NewModelForm",
         data: () => ({
             form: {
-                Customer: "",
-                Days: "",
-                Location: "",
-                Comments: ""
+                customer: "",
+                date:"",
+                days:0,
+                location: "",
+                comments: ""
             }
         }),
         methods: {
             onSubmitForm() {
                 var url = "https://localhost:44368/api/Jobs";
+                this.form.days = Number(this.form.days);
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(this.form),

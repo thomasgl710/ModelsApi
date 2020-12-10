@@ -46,7 +46,7 @@
         }),
         methods: {
             onSubmitForm() {
-                var url = "https://localhost:44368/api/Models";
+                var url = "https://localhost:44368/api/Jobs/" + this.form.efJoblId + "/model/" + this.form.efModelId;
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(this.form),

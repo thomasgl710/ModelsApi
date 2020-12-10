@@ -20,7 +20,7 @@
 <script>
     import Home from './components/Home.vue';
     import Login from './components/Login.vue';
-    import AddModelToJob from './components/AddModelToJob.vue';
+    //import AddModelToJob from './components/AddModelToJob.vue';
     import NewManager from './components/NewManager.vue';
     import RemoveModelFromJob from './components/RemoveModelFromJob.vue';
     import NewModel from './components/NewModel.vue'
@@ -32,7 +32,7 @@
         components: {
             Home,
             Login,
-            AddModelToJob,
+            //AddModelToJob,
             NewManager,
             NewModel,
             RemoveModelFromJob,
