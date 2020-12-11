@@ -3,10 +3,11 @@
         <div class="column is-two-thirds">
             <section class="section">
                 <h1 class="title">Create New Job</h1>
-                <p class="subtitle">
+                <h2 class="subtitle">
                     Work work work work <strong>work</strong>!
-                </p>
+                </h2>
                 <hr>
+                <br />
             </section>
 
             <section class="form">
@@ -70,13 +71,13 @@
                     </div>
                     <div class="field is-grouped">
                         <div class="control">
-                            <button class="button is-primary">
+                            <button class="bbutton">
                                 Submit
                             </button>
                         </div>
                     </div>
 
-                    <button @click="$router.push('ManagerSite')">Cancel</button>
+                    <button class="bbutton" @click="$router.push('ManagerSite')">Cancel</button>
 
                 </form>
             </section>

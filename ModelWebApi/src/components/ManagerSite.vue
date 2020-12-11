@@ -2,13 +2,20 @@
     <div class="column is two-thirds">
         <section class="section">
             <h1 class="title"> Im The Manager</h1>
-            <p class=" subtitle">
+            <h2 class=" subtitle">
                 I can do whatever I want - <strong>Donald Trump</strong>!
-            </p>
+            </h2>
             <hr>
+            <br />
+
+            <button class="bbutton" v-on:click="getAllJobsData">Get Jobs Data</button>
 
 
-            <button v-on:click="getAllJobsData">Get Jobs Data</button>
+            <button class="bbutton" @click="$router.push('AddAModelToJob')">Add Model</button>
+            <button class="bbutton" @click="$router.push('RemoveModelFromJob')">Remove Model</button>
+            <button class="bbutton" @click="$router.push('NewModel')">New Model</button>
+            <button class="bbutton" @click="$router.push('NewJob')">New Job</button>
+            <button class="bbutton" @click="$router.push('NewManager')">New Manager</button>
 
             <div class="container">
                 <table class="table table-stripped">
@@ -37,13 +44,6 @@
                 </table>
             </div>
 
-
-
-            <button @click="$router.push('AddAModelToJob')">Add Model</button>
-            <button @click="$router.push('RemoveModelFromJob')">Remove Model</button>
-            <button @click="$router.push('NewModel')">New Model</button>
-            <button @click="$router.push('NewJob')">New Job</button>
-            <button @click="$router.push('NewManager')">New Manager</button>
 
         </section>
     </div>
@@ -83,52 +83,4 @@
 
 </script>
 
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
-
-    *, *:before, *:after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        background: #105469;
-        font-family: 'Open Sans', sans-serif;
-    }
-
-    table {
-        background: #012B39;
-        border-radius: 0.25em;
-        border-collapse: collapse;
-        margin: 1em;
-    }
-
-    th {
-        border-bottom: 1px solid #364043;
-        color: #E2B842;
-        font-size: 0.85em;
-        font-weight: 600;
-        padding: 0.5em 1em;
-        text-align: left;
-    }
-
-    td {
-        color: #fff;
-        font-weight: 400;
-        padding: 0.65em 1em;
-    }
-
-    .disabled td {
-        color: #4F5F64;
-    }
-
-    tbody tr {
-        transition: background 0.25s ease;
-    }
-
-        tbody tr:hover {
-            background: #014055;
-        }
-</style>
 

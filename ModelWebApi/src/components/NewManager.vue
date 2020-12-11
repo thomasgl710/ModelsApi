@@ -2,10 +2,11 @@
     <div class="column is two-thirds">
         <section class="section">
             <h1 class="title"> Create new manager account</h1>
-            <p class=" subtitle">
+            <h2 class=" subtitle">
                 Please create an account mr. Lee
-            </p>
+            </h2>
             <hr>
+            <br />
             <section class="form">
                 <form v-on:submit.prevent="onSubmitForm">
                     <div class="field">
@@ -41,13 +42,13 @@
                     <p></p>
                     <div class="field-is-grouped">
                         <div class="control">
-                            <button class="button is-primary">
+                            <button class="bbutton">
                                 Create
                             </button>
                         </div>
                     </div>
 
-                    <button @click="$router.push('ManagerSite')">Cancel</button>
+                    <button class="bbutton" @click="$router.push('ManagerSite')">Cancel</button>
 
                 </form>
             </section>

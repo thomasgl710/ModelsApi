@@ -2,10 +2,11 @@
     <div class="column is two-thirds">
         <section class="section">
             <h1 class="title"> Add model to job</h1>
-            <p class="subtitle">
+            <h2 class="subtitle">
                 Please add the model!!
-            </p>
+            </h2>
             <hr>
+            <br />
             <section class="form">
                 <form v-on:submit.prevent="onSubmitForm">
                     <div class="field">
@@ -23,7 +24,7 @@
                     <p></p>
                     <div class="field-is-grouped">
                         <div class="control">
-                            <button class="button is-primary">
+                            <button class="bbutton">
                                 Add
                             </button>
                         </div>
@@ -31,7 +32,7 @@
 
                 </form>
 
-                <button @click="$router.push('ManagerSite')">Cancel</button>
+                <button class="bbutton" @click="$router.push('ManagerSite')">Cancel</button>
 
             </section>
         </section>
@@ -63,7 +64,6 @@
                     }
                 }).then(responseJson => {
                     this.response = responseJson;
-                    alert("Fetching is done");
 
                     this.$router.push('ManagerSite');
                 })

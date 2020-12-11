@@ -3,10 +3,11 @@
         <div class="column is-two-thirds">
         <section class="section">
             <h1 class="title">Create New Model</h1>
-            <p class="subtitle">
+            <h2 class="subtitle">
                 True beauty comes from the <strong>outside</strong>!
-            </p>
+            </h2>
             <hr>
+            <br />
         </section>
         <!-- form starts here -->
         <section class="form">
@@ -20,8 +21,8 @@
                                class="input" type="text" placeholder="First Name">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('firstname')">
-            {{ errors.first('name') }}
-        </p>-->
+                {{ errors.first('name') }}
+            </p>-->
                 </div>
 
 
@@ -34,8 +35,8 @@
                                class="input" type="text" placeholder="Last Name">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('lastname')">
-            {{ errors.first('lastname') }}
-        </p>-->
+                {{ errors.first('lastname') }}
+            </p>-->
                 </div>
 
 
@@ -45,11 +46,11 @@
                         <input firstname="email"
                                v-model="form.email"
                                v-validate="'required|min:3'"
-                               class="input" type="text" placeholder="Email">
+                               class="input" type="email" placeholder="Email">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('email')">
-            {{ errors.first('email') }}
-        </p>-->
+                {{ errors.first('email') }}
+            </p>-->
                 </div>
 
 
@@ -62,8 +63,8 @@
                                class="input" type="password" placeholder="Password">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('email')">
-            {{ errors.first('email') }}
-        </p>-->
+                {{ errors.first('email') }}
+            </p>-->
                 </div>
 
 
@@ -78,8 +79,8 @@
                                class="input" type="text" placeholder="Phonenumber">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('phonenumber')">
-            {{ errors.first('phonenumber') }}
-        </p>-->
+                {{ errors.first('phonenumber') }}
+            </p>-->
                 </div>
 
 
@@ -92,8 +93,8 @@
                                class="input" type="text" placeholder="Address Line 1">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('addressLine1')">
-            {{ errors.first('addressLine1') }}
-        </p>-->
+                {{ errors.first('addressLine1') }}
+            </p>-->
                 </div>
 
 
@@ -106,8 +107,8 @@
                                class="input" type="text" placeholder="Address Line 2">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('addressLine2')">
-            {{ errors.first('addressLine2') }}
-        </p>-->
+                {{ errors.first('addressLine2') }}
+            </p>-->
                 </div>
 
 
@@ -120,8 +121,8 @@
                                class="input" type="text" placeholder="Zip">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('zip')">
-            {{ errors.first('zip') }}
-        </p>-->
+                {{ errors.first('zip') }}
+            </p>-->
                 </div>
 
 
@@ -134,8 +135,8 @@
                                class="input" type="text" placeholder="City">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('city')">
-            {{ errors.first('city') }}
-        </p>-->
+                {{ errors.first('city') }}
+            </p>-->
                 </div>
 
 
@@ -148,8 +149,8 @@
                                class="input" type="text" placeholder="Country">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('country')">
-            {{ errors.first('country') }}
-        </p>-->
+                {{ errors.first('country') }}
+            </p>-->
                 </div>
 
 
@@ -171,8 +172,8 @@
                                class="input" type="text" placeholder="Nationality">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('nationality')">
-            {{ errors.first('nationality') }}
-        </p>-->
+                {{ errors.first('nationality') }}
+            </p>-->
                 </div>
 
 
@@ -185,8 +186,8 @@
                                class="input" step="any" type="number" placeholder="In meters" min="0">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('height')">
-            {{ errors.first('height') }}
-        </p>-->
+                {{ errors.first('height') }}
+            </p>-->
 
 
                 </div>
@@ -203,8 +204,8 @@
                                class="input" type="number" placeholder="US-sizes" min="0">
                     </div>
                     <!--<p class="help is-danger" v-show="errors.has('shoesize')">
-            {{ errors.first('shoesize') }}
-        </p>-->
+                {{ errors.first('shoesize') }}
+            </p>-->
                 </div>
 
                 <div class="field">
@@ -245,34 +246,19 @@
                         <textarea class="textarea" placeholder="Textarea" v-model="form.comments"></textarea>
                     </div>
                 </div>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-primary">
-                            Submit
-                        </button>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="bbutton">
+                                Submit
+                            </button>
+                        </div>
                     </div>
-                </div>
-
-                <button @click="$router.push('ManagerSite')">Cancel</button>
 
             </form>
+            <button class="bbutton" @click="$router.push('ManagerSite')">Cancel</button>
+
         </section>
-
-    </div>
-
-        <div class="column">
-            <section class="section" id="results">
-                <div class="box">
-                    <ul>
-                         loop through all the `form` properties and show their values 
-                        <li v-for="(item, k) in form" v-bind:key="k">
-                            <strong>{{ k }}:</strong> {{ item }}
-                        </li>
-                    </ul>
-                </div>
-            </section>
         </div>
-
     </div>
 </template>
 

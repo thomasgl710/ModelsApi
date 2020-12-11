@@ -3,10 +3,9 @@
         <div class="columns is-two-thirds">
             <section class="section">
                 <h1 class="title"> Login page</h1>
-                <p class="subtitle">
-                    Are you a model?
-                </p>
+                <h2 class="subtitle"> Are you a model?</h2>
                 <hr>
+                <br />
                 <section class="form">
                     <form v-on:submit.prevent="login">
                         <div class="field">
@@ -24,13 +23,14 @@
                         <p></p>
                         <div class="field-is-grouped">
                             <div class="control">
-                                <button class="button is-primary">
+                                <button class="bbutton">
                                     Login
                                 </button>
                             </div>
                         </div>
+
                     </form>
-                    <button @click="$router.push('/')">Cancel</button>
+                    <button class="bbutton" @click="$router.push('/')">Cancel</button>
                 </section>
             </section>
         </div>
@@ -77,8 +77,6 @@
 
                         let token = await response.json();
                         localStorage.setItem("token", token.jwt);
-
-                        alert("The password was correct");
                         // Change view to some other component
                         
                         if (this.parseJwt(token.jwt).ModelId < 0) {

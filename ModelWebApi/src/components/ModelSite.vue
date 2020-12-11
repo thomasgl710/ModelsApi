@@ -2,13 +2,13 @@
     <div class="column is two-thirds">
         <section class="section">
             <h1 class="title"> Im a Model</h1>
-            <p class=" subtitle">
+            <h2 class=" subtitle">
                 - <strong>Donald Trump</strong>!
-            </p>
+            </h2>
             <hr>
+            <br />
 
-
-            <button v-on:click="getAllJobsData">Get Jobs Data</button>
+            <bbutton class="bbutton" v-on:click="getAllJobsData">Get Jobs Data</bbutton>
 
             <div class="container">
                 <table class="table table-stripped">
@@ -39,7 +39,7 @@
 
 
 
-            <button @click="$router.push('AddAnExpense')">Add an expense</button>
+            <button class="bbutton" @click="$router.push('AddAnExpense')">Add an expense</button>
         </section>
     </div>
 

@@ -1,5 +1,6 @@
 <template>
     <div class="center">
+        <h1>  Model Website</h1>
         <img src="../images/vicmodels.gif" alt="this slowpoke moves" width=250 />
         <img src="../images/airkissmodel.gif" alt="this slowpoke moves" width=250 />
         <img src="../images/alsosexymodel.gif" alt="this slowpoke moves" width=250 />
@@ -65,30 +66,130 @@
         padding: 0;
         box-sizing: border-box;
     }
+     h1{
+         color:aliceblue;
+         font-size: 2em;
+         font-weight: 900;
+         margin: 0 0 2em;
+         text-align-last: center;
+     }
+        .bbutton {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
 
-    body {
-        background: #105469;
-        font-family: 'Open Sans', sans-serif;
-    }
+        }
+        input[type=text] {
+            width: 100%;
+            max-width: 25em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        h2 {
+            color: aliceblue;
+            font-size: 1.5em;
+            font-weight: 900;
+            margin: 0 0 0.1em;
+        }
+        textarea {
+            width: 100%;
+            max-width: 50em;
+            height: 7em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        input[type=number] {
+            width: 100%;
+            max-width: 25em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        input[type=date] {
+            width: 100%;
+            max-width: 25em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        input[type=email] {
+            width: 100%;
+            max-width: 25em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        input[type=password] {
+            width: 100%;
+            max-width: 25em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        label{
+            color: white;
+            font-weight: 800;
 
-    table {
-        background: #012B39;
-        border-radius: 0.25em;
-        border-collapse: collapse;
-        margin: 1em;
-    }
+        }
+        select {
+            width: 100%;
+            max-width: 25em;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+        body {
+            align-items: center;
+            margin: auto;
+            width: 90%;
+            padding: 3em;
+            margin-left: auto;
+            margin-right: auto;
+            background: #07A87A;
+            font-family: 'Open Sans', sans-serif;
+        }
 
-    th {
-        border-bottom: 1px solid #364043;
-        color: #E2B842;
-        font-size: 0.85em;
-        font-weight: 600;
-        padding: 0.5em 1em;
-        text-align: left;
-    }
+        table {
+            background: white;
+            border-radius: 0.25em;
+            border-collapse: collapse;
+            margin: 1em;
+        }
+
+        th {
+            border-bottom: 1px solid #364043;
+            color: #f44336;
+            font-size: 0.95em;
+            font-weight: 900;
+            padding: 0.5em 1em;
+            text-align: left;
+        }
 
     td {
-        color: #fff;
+        color: black;
         font-weight: 400;
         padding: 0.65em 1em;
     }
@@ -102,6 +203,6 @@
     }
 
         tbody tr:hover {
-            background: #014055;
+            background: #f44336;
         }
 </style>

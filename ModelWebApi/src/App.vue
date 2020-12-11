@@ -1,16 +1,8 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">Home</router-link> |
-           <!--<router-link to="/NewManager">New Manager</router-link> |-->
-            <router-link to="/Login">Login</router-link> |
-            <!--<router-link to="/NewModel">New Model</router-link>|
-            <router-link to="/AddAModelToJob">Add a model to job</router-link>|
-            <router-link to="/RemoveModelFromJob">Remove model from job</router-link>|
-            <router-link to="/AddAnExpense">Add an expense</router-link>|
-            <router-link to="/NewJob">Add new job</router-link>|-->
-            <!--<router-link to="/ManagerSite">Manager Site</router-link>|
-            <router-link to="/ModelSite">Model Site</router-link>-->
+            <button class="bbutton" @click="$router.push('/')">Home</button>
+            <button class="bbutton" @click="$router.push('Login')">Login</button>
         </div>
 
         <router-view></router-view>

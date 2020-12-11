@@ -3,10 +3,11 @@
         <div class="column is-two-thirds">
             <section class="section">
                 <h1 class="title">Add An Expense</h1>
-                <p class="subtitle">
+                <h2 class="subtitle">
                     View health as an investment, not an <strong>expense</strong>!
-                </p>
+                </h2>
                 <hr>
+            <br />
             </section>
 
             <section class="form">
@@ -40,7 +41,7 @@
                     <p></p>
                     <div class="field-is-grouped">
                         <div class="control">
-                            <button class="button is-primary">
+                            <button class="bbutton">
                                 Add
                             </button>
                         </div>
@@ -48,7 +49,7 @@
 
                 </form>
 
-                <button @click="$router.push('ModelSite')">Cancel</button>
+                <button class="bbutton" @click="$router.push('ModelSite')">Cancel</button>
 
             </section>
         </div>
