@@ -36,6 +36,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\App.vue" />
+    <Content Include="src\components\AddAModelToJob.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\AddAnExpense.vue" />
     <Content Include="src\components\AddModelToJob.vue">
       <SubType>Code</SubType>

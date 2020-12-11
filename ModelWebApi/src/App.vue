@@ -5,7 +5,7 @@
             <router-link to="/NewManager">New Manager</router-link> |
             <router-link to="/Login">Login</router-link> |
             <router-link to="/NewModel">New Model</router-link>|
-            <router-link to="/AddModelToJob">Add model from to</router-link>|
+            <router-link to="/AddAModelToJob">Add a model to job</router-link>|
             <router-link to="/RemoveModelFromJob">Remove model from job</router-link>|
             <router-link to="/AddAnExpense">Add an expense</router-link>|
             <router-link to="/NewJob">Add new job</router-link>
@@ -21,7 +21,7 @@
 <script>
     import Home from './components/Home.vue';
     import Login from './components/Login.vue';
-    //import AddModelToJob from './components/AddModelToJob.vue';
+    import AddAModelToJob from './components/AddAModelToJob.vue';
     import NewManager from './components/NewManager.vue';
     import RemoveModelFromJob from './components/RemoveModelFromJob.vue';
     import NewModel from './components/NewModel.vue'
@@ -34,7 +34,7 @@
         components: {
             Home,
             Login,
-            //AddModelToJob,
+            AddAModelToJob,
             NewManager,
             NewModel,
             RemoveModelFromJob,
