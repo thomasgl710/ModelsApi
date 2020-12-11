@@ -28,7 +28,11 @@
                             </button>
                         </div>
                     </div>
+
                 </form>
+
+                <button @click="$router.push('ManagerSite')">Cancel</button>
+
             </section>
         </section>
     </div>
@@ -61,6 +65,8 @@
                 }).then(responseJson => {
                     this.response = responseJson;
                     alert("Fetching is done");
+
+                    this.$router.push('ManagerSite');
                 })
                     .catch(error => alert('Something bad happened: ' + error));
 

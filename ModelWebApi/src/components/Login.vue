@@ -16,19 +16,22 @@
                                 </div>
                             </div>
                             <div class="field">
-                        <label class="label">Password</label>
-                        <div class="control">
-                            <input type="password" v-model="form.password" />
-                        </div>
-                    </div>
+                                <label class="label">Password</label>
+                                <div class="control">
+                                    <input type="password" v-model="form.password" />
+                                </div>
+                            </div>
                             <p></p>
-                    <div class="field-is-grouped">
-                        <div class="control">
-                            <button class="button is-primary">
-                                Login
-                            </button>
-                        </div>
-                    </div>
+                            <div class="field-is-grouped">
+                                <div class="control">
+                                    <button class="button is-primary">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button @click="$router.push('Home')">Cancel</button>
+
                         </form>
                     </section>
             </section>
@@ -76,13 +79,18 @@
 
                         let token = await response.json();
                         localStorage.setItem("token", token.jwt);
+
                         alert("The password was correct");
                         // Change view to some other component
                         
-                        if (this.parseJwt(token.jwt).ModelId > 0) {
-
+                        if (this.parseJwt(token.jwt).ModelId < 0) {
+                            this.$router.push('ManagerSite');
+                        }
+                        else {
+                            this.$router.push('ModelSite');
                         }
                         // …
+                        
                     } else {
                         alert("Server returned: " + response.statusText);
                     }
@@ -90,6 +98,14 @@
                     alert("Error: " + err);
                 }
                 return;
+            },
+            parseJwt(token) {
+                var base64Url = token.split('.')[1];
+                var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
             }
         }
     }
