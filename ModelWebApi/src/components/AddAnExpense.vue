@@ -12,13 +12,6 @@
             <section class="form">
                 <form v-on:submit.prevent="onSubmitForm">
                     <div class="field">
-                        <label class="label">ModelId</label>
-                        <div class="control">
-                            <input name="ModelId" v-model="form.modelId" class="input" type="number" min="0">
-                        </div>
-                    </div>
-
-                    <div class="field">
                         <label class="label">JobId</label>
                         <div class="control">
                             <input name="JobId" v-model="form.jobId" class="input" type="number" min="0">
@@ -64,18 +57,47 @@
         name: "VNTForm",
         data: () => ({
             form: {
-                modelId: "",
-                jobId: "",
-                date: "",
-                text: "",
-                amount: ""
+                modelId: {
+                    type: Number
+                },
+                jobId: {
+                    type: Number,
+                    required: true
+                },
+                date: {
+                    type: Date,
+                    required: true
+                },
+                text: {
+                    type: String,
+                    required: true
+                },
+                amount: {
+                    type: Number,
+                    required: true
+                }
             }
         }),
         methods: {
+            parseJwt(token) {
+                var base64Url = token.split('.')[1];
+                var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+
+
+                return JSON.parse(jsonPayload);
+            },
             onSubmitForm() {
                 var url = "https://localhost:44368/api/Expenses";
-                this.form.amount = Number(this.form.amount);
+                var token = localStorage.getItem("token");
+
+                this.form.modelId = this.parseJwt(token).ModelId;
+               
+                console.log(this.form.modelId);
                 this.form.modelId = Number(this.form.modelId);
+                this.form.amount = Number(this.form.amount);
                 this.form.jobId = Number(this.form.jobId);
                 fetch(url, {
                     method: 'POST',

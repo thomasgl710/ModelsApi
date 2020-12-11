@@ -26,11 +26,6 @@ export default new VueRouter({
             name: "Login",
             component: Login
         },
-        //{
-        //    path: "/about",
-        //    name: "About",
-        //    component: () => import("..//Home.vue")
-        //},
         {
             path: "/NewManager",
             name: "NewManager",
