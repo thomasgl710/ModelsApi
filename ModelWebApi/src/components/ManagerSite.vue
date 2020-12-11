@@ -39,7 +39,7 @@
 
 
 
-            <button @click="$router.push('AddModelToJob')">Add Model</button>
+            <button @click="$router.push('AddAModelToJob')">Add Model</button>
             <button @click="$router.push('RemoveModelFromJob')">Remove Model</button>
             <button @click="$router.push('NewModel')">New Model</button>
             <button @click="$router.push('NewJob')">New Job</button>
