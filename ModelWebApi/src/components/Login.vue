@@ -60,6 +60,7 @@
                     if (response.ok) {
                         let token = await response.json();
                         localStorage.setItem("token", token.jwt);
+                        alert("The password was correct");
                         // Change view to some other component
                         // …
                     } else {

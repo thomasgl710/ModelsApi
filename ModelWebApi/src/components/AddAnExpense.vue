@@ -12,16 +12,35 @@
             <section class="form">
                 <form v-on:submit.prevent="onSubmitForm">
                     <div class="field">
-                        <label class="label">JobId</label>
+                        <label class="label">ModelId</label>
                         <div class="control">
-                            <input name="EfJobId" v-model="form.efJobId" class="input" type="number" min="0">
+                            <input name="ModelId" v-model="form.modelId" class="input" type="number" min="0">
                         </div>
                     </div>
 
                     <div class="field">
-                        <label class="label">Expense</label>
+                        <label class="label">JobId</label>
                         <div class="control">
-                            <input name="Expense" v-model="form.expense" class="input" type="number" min="0">
+                            <input name="JobId" v-model="form.jobId" class="input" type="number" min="0">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Date</label>
+                        <div class="control">
+                            <input type="date" id="date" name="date"
+                                   v-model="form.date">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Text</label>
+                        <div class="control">
+                            <input name="Text" v-model="form.text" class="input" type="text" min="0">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Amount</label>
+                        <div class="control">
+                            <input name="Amount" v-model="form.amount" class="input" type="number" min="0">
                         </div>
                     </div>
 
@@ -45,13 +64,19 @@
         name: "VNTForm",
         data: () => ({
             form: {
-                efJoblId: "",
-                expense: ""
+                modelId: "",
+                jobId: "",
+                date: "",
+                text: "",
+                amount: ""
             }
         }),
         methods: {
             onSubmitForm() {
                 var url = "https://localhost:44368/api/Expenses";
+                this.form.amount = Number(this.form.amount);
+                this.form.modelId = Number(this.form.modelId);
+                this.form.jobId = Number(this.form.jobId);
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify(this.form),

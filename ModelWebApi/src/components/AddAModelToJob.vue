@@ -1,9 +1,9 @@
 <template>
     <div class="column is two-thirds">
         <section class="section">
-            <h1 class="title"> Remove model from job</h1>
+            <h1 class="title"> Add model to job</h1>
             <p class="subtitle">
-                Please remove the model!!
+                Please add the model!!
             </p>
             <hr>
             <section class="form">
@@ -24,7 +24,7 @@
                     <div class="field-is-grouped">
                         <div class="control">
                             <button class="button is-primary">
-                                Remove
+                                Add
                             </button>
                         </div>
                     </div>
@@ -46,12 +46,11 @@
         }),
         methods: {
             onSubmitForm() {
-                var url = "https://localhost:44368/api/Jobs/" + this.form.jobId + "/model/" + this.form.modelId;
-                this.form.jobId = Number(this.form.jobId);
-                this.form.modelId = Number(this.form.modelId);
 
+                
+                var url = "https://localhost:44368/api/Jobs/" + this.form.jobId + "/model/" + this.form.modelId;
                 fetch(url, {
-                    method: 'DELETE',
+                    method: 'POST',
                     body: JSON.stringify(this.form),
                     credentials: 'include',
                     headers: {
