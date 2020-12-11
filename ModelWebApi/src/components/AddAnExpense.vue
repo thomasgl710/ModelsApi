@@ -84,7 +84,7 @@
             }
         }),
         methods: {
-            https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
+            
             parseJwt(token) {
                 var base64Url = token.split('.')[1];
                 var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
