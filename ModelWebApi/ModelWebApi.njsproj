@@ -61,6 +61,12 @@
     <Content Include="src\eventbus.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\images\airkissmodel.gif" />
+    <Content Include="src\images\alsosexymodel.gif" />
+    <Content Include="src\images\anothermodel.gif" />
+    <Content Include="src\images\blondehairmodel.gif" />
+    <Content Include="src\images\brownhairmodel.gif" />
+    <Content Include="src\images\vicmodels.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
@@ -69,10 +75,12 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\images\" />
     <Folder Include="src\views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
+    <Content Include="src\images\weirdmodel.gif" />
     <Content Include="src\main.js" />
   </ItemGroup>
   <PropertyGroup>

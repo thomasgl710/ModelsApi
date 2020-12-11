@@ -19,9 +19,9 @@
                                v-validate="'required|min:3'"
                                class="input" type="text" placeholder="First Name">
                     </div>
-                    <!--<p class="help is-danger" v-show="errors.has('firstname')">
+                    <p class="help is-danger" v-show="errors.has('firstname')">
             {{ errors.first('name') }}
-        </p>-->
+        </p>
                 </div>
 
 
