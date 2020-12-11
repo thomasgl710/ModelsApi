@@ -50,6 +50,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\components\ManagerSite.vue" />
+    <Content Include="src\components\ModelSite.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\NewJob.vue" />
     <Content Include="src\components\NewManager.vue">
       <SubType>Code</SubType>

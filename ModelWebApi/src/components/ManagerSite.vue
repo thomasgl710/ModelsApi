@@ -7,11 +7,13 @@
             </p>
             <hr>
 
+
+            <button v-on:click="getAllJobsData">Get Jobs Data</button>
+
             <div class="container">
                 <table class="table table-stripped">
                     <thead>
                         <tr>
-
                             <th>Job ID</th>
                             <th>Customer</th>
                             <th>Start Date</th>
@@ -21,13 +23,23 @@
 
                         </tr>
                     </thead>
-                    <tbody id="data">
+                    <tbody>
+                        <tr v-for="jobdata in jobDataList">
+                            <td>{{jobdata.efJobId}}</td>
+                            <td>{{jobdata.customer}}</td>
+                            <td>{{jobdata.startDate}}</td>
+                            <td>{{jobdata.days}}</td>
+                            <td>{{jobdata.location}}</td>
+                            <td>{{jobdata.comments}}</td>
+                        </tr>
 
                     </tbody>
                 </table>
             </div>
 
-            <button @click="$router.push('AddAModelToJob')">Add Model</button>
+
+
+            <button @click="$router.push('AddModelToJob')">Add Model</button>
             <button @click="$router.push('RemoveModelFromJob')">Remove Model</button>
             <button @click="$router.push('NewModel')">New Model</button>
             <button @click="$router.push('NewJob')">New Job</button>
@@ -38,36 +50,36 @@
 </template>
 
 <script>
-    
+    export default {
+        name: "AllJobs",
+        data() {
+            return {
+                jobDataList: {}
+            };
+        },
+        methods: {
+            getAllJobsData() {
+                var url = "https://localhost:44368/api/Jobs";
+                var vm = this;
+                fetch(url, {
+                    method: 'GET', // Or DELETE
+                    credentials: 'include',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        (vm.jobDataList = data)
+                    })
+                
+                    .catch(error => alert('Something bad happened: ' + error));
 
-
-            //var url = "https://localhost:44368/api/Jobs";
-            //fetch(url).then(
-            //    res => {
-            //        res.json.then(
-            //            data => {
-
-            //                if (data.length > 0) {
-            //                    var temp = "";
-
-            //                    data.forEach((u) => {
-            //                        temp += "<tr>";
-            //                        temp += "<td>" + u.EFJobId + "<td>";
-            //                        temp += "<td>" + u.Customer + "<td>";
-            //                        temp += "<td>" + u.StartDate + "<td>";
-            //                        temp += "<td>" + u.Days + "<td>";
-            //                        temp += "<td>" + u.Location + "<td>";
-            //                        temp += "<td>" + u.Comments + "<td>";
-            //                    })
-
-            //                    document.getElementById(data).innerHTML = temp;
-            //                }
-            //            }
-            //        )
-            //    }
-            //)
-        
-    
+            }
+        }
+    };
 
 </script>
 
