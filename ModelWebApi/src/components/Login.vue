@@ -7,33 +7,31 @@
                     Are you a model?
                 </p>
                 <hr>
-                    <section class="form">
-                        <form v-on:submit.prevent="login">
-                            <div class="field">
-                                <label class="label">Email</label>
-                                <div class="control">
-                                    <input type="email" v-model="form.email" />
-                                </div>
+                <section class="form">
+                    <form v-on:submit.prevent="login">
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input type="email" v-model="form.email" />
                             </div>
-                            <div class="field">
-                                <label class="label">Password</label>
-                                <div class="control">
-                                    <input type="password" v-model="form.password" />
-                                </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input type="password" v-model="form.password" />
                             </div>
-                            <p></p>
-                            <div class="field-is-grouped">
-                                <div class="control">
-                                    <button class="button is-primary">
-                                        Login
-                                    </button>
-                                </div>
+                        </div>
+                        <p></p>
+                        <div class="field-is-grouped">
+                            <div class="control">
+                                <button class="button is-primary">
+                                    Login
+                                </button>
                             </div>
-
-                            <button @click="$router.push('Home')">Cancel</button>
-
-                        </form>
-                    </section>
+                        </div>
+                    </form>
+                    <button @click="$router.push('/')">Cancel</button>
+                </section>
             </section>
         </div>
     </div>
@@ -98,14 +96,6 @@
                     alert("Error: " + err);
                 }
                 return;
-            },
-            parseJwt(token) {
-                var base64Url = token.split('.')[1];
-                var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-                }).join(''));
-                return JSON.parse(jsonPayload);
             }
         }
     }
