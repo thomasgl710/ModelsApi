@@ -9,6 +9,7 @@ import RemoveModelFromJob from "../src/components/RemoveModelFromJob.vue";
 import AddAnExpense from "../src/components/AddAnExpense.vue";
 import NewJob from "../src/components/NewJob.vue"
 import ManagerSite from "../src/components/ManagerSite.vue"
+import ModelSite from "../src/components/ModelSite.vue"
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -64,6 +65,11 @@ export default new VueRouter({
             path: "/ManagerSite",
             name: "ManagerSite",
             component: ManagerSite
+        },
+        {
+            path: "/ModelSite",
+            name: "ModelSite",
+            component: ModelSite
         }
     ]
 });

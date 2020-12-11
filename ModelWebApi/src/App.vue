@@ -11,6 +11,7 @@
             <router-link to="/AddAnExpense">Add an expense</router-link>|
             <router-link to="/NewJob">Add new job</router-link>
             <router-link to="/ManagerSite">Manager Site</router-link>
+            <router-link to="/ModelSite">Model Site</router-link>
         </div>
 
         <router-view></router-view>
@@ -27,6 +28,7 @@
     import NewModel from './components/NewModel.vue'
     import AddAnExpense from './components/AddAnExpense.vue'
     import NewJob from './components/NewJob.vue'
+    import ModelSite from './components/ModelSite.vue'
 
     export default {
         name: 'app',
@@ -38,7 +40,8 @@
             NewModel,
             RemoveModelFromJob,
             AddAnExpense,
-            NewJob
+            NewJob,
+            ModelSite
         }
     };
 </script>

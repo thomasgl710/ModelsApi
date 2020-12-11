@@ -27,10 +27,10 @@
 
                     <!-- MISSING STARTDATE -->
                     <div class="field">
-                        <div class="label">Date</div>
+                        <div class="label">Startdate</div>
                         <div class="control">
-                            <input type="date" id="date" name="date"
-                                   v-model="form.date">
+                            <input type="date" id="startdate" name="startdate"
+                                   v-model="formstart.date">
                         </div>
                     </div>
 
@@ -57,9 +57,9 @@
                                    v-validate="'required|min:3'"
                                    class="input" type="text" placeholder="Location">
                         </div>
-                        <!--<p class="help is-danger" v-show="errors.has('location')">
-            {{ errors.first('location') }}
-        </p>-->
+                        <p class="help is-danger" v-show="errors.has('location')">
+                            {{ errors.first('location') }}
+                        </p>
                     </div>
 
                     <div class="field">
@@ -89,7 +89,7 @@
         data: () => ({
             form: {
                 customer: "",
-                date:"",
+                startdate:"",
                 days:0,
                 location: "",
                 comments: ""
