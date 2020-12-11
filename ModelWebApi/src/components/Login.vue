@@ -16,19 +16,22 @@
                                 </div>
                             </div>
                             <div class="field">
-                        <label class="label">Password</label>
-                        <div class="control">
-                            <input type="password" v-model="form.password" />
-                        </div>
-                    </div>
+                                <label class="label">Password</label>
+                                <div class="control">
+                                    <input type="password" v-model="form.password" />
+                                </div>
+                            </div>
                             <p></p>
-                    <div class="field-is-grouped">
-                        <div class="control">
-                            <button class="button is-primary">
-                                Login
-                            </button>
-                        </div>
-                    </div>
+                            <div class="field-is-grouped">
+                                <div class="control">
+                                    <button class="button is-primary">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button @click="$router.push('Home')">Cancel</button>
+
                         </form>
                     </section>
             </section>
@@ -80,8 +83,11 @@
                         alert("The password was correct");
                         // Change view to some other component
                         
-                        if (this.parseJwt(token.jwt).ModelId > 0) {
-
+                        if (this.parseJwt(token.jwt).ModelId < 0) {
+                            this.$router.push('ManagerSite');
+                        }
+                        else {
+                            this.$router.push('ModelSite');
                         }
                         // …
                         

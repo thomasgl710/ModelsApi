@@ -212,7 +212,7 @@
                     <div class="control">
                         <div class="select">
                             <select v-model="form.hair_type">
-                           
+
                                 <option disabled value="">Nothing selected</option>
                                 <option v-for="option in options.haircolor" v-bind:value="option.value" v-bind:key="option.key">
                                     {{ option.text }}
@@ -252,6 +252,9 @@
                         </button>
                     </div>
                 </div>
+
+                <button @click="$router.push('ManagerSite')">Cancel</button>
+
             </form>
         </section>
 
@@ -328,6 +331,8 @@
                     }
                 }).then(responseJson => {
                     this.response = responseJson;
+
+                    this.$router.push('ManagerSite');
             })
             .catch(error => alert('Something bad happened: ' + error));
 

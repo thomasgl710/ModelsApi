@@ -45,7 +45,11 @@
                             </button>
                         </div>
                     </div>
+
                 </form>
+
+                <button @click="$router.push('ModelSite')">Cancel</button>
+
             </section>
         </div>
     </div>
@@ -109,6 +113,8 @@
                     }
                 }).then(responseJson => {
                     this.response = responseJson;
+
+                    this.$router.push('ModelSite');
                 })
                     .catch(error => alert('Something bad happened: ' + error));
 

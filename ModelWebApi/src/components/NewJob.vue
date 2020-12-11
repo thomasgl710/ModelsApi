@@ -58,8 +58,8 @@
                                    class="input" type="text" placeholder="Location">
                         </div>
                         <!--<p class="help is-danger" v-show="errors.has('location')">
-                            {{ errors.first('location') }}
-                        </p>-->
+            {{ errors.first('location') }}
+        </p>-->
                     </div>
 
                     <div class="field">
@@ -75,6 +75,9 @@
                             </button>
                         </div>
                     </div>
+
+                    <button @click="$router.push('ManagerSite')">Cancel</button>
+
                 </form>
             </section>
 
@@ -109,6 +112,8 @@
                     }
                 }).then(responseJson => {
                     this.response = responseJson;
+
+                    this.$router.push('ManagerSite');
                 })
                     .catch(error => alert('Something bad happened: ' + error));
 
