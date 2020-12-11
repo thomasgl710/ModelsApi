@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <p>Thomas er en bot</p>
         <div id="nav">
             <router-link to="/">Home</router-link> |
             <router-link to="/NewManager">New Manager</router-link> |
