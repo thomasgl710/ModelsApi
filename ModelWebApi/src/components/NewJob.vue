@@ -30,7 +30,7 @@
                         <div class="label">Startdate</div>
                         <div class="control">
                             <input type="date" id="startdate" name="startdate"
-                                   v-model="formstart.date">
+                                   v-model="form.startdate">
                         </div>
                     </div>
 
@@ -57,9 +57,9 @@
                                    v-validate="'required|min:3'"
                                    class="input" type="text" placeholder="Location">
                         </div>
-                        <p class="help is-danger" v-show="errors.has('location')">
+                        <!--<p class="help is-danger" v-show="errors.has('location')">
                             {{ errors.first('location') }}
-                        </p>
+                        </p>-->
                     </div>
 
                     <div class="field">
